@@ -1,5 +1,5 @@
 <script setup>
-    import MainSearch from './MainSearch.vue'
+    import MainSearch from './Mainsearch.vue'
     import MainCards from './MainCards.vue'
     import Mainpagination from './Mainpagination.vue'
 </script>
