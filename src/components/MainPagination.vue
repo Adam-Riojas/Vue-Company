@@ -17,7 +17,7 @@
 <template>
   <div class="pagination">
     <button class="action" :disabled="activePage === 1" @click="prevPage">Prev</button>
-    <button>
+    <button
       v-for="page in pages"
       :key="page"
       class= "page"
