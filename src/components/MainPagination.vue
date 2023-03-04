@@ -1,16 +1,15 @@
 <script setup>
-  import useAPI from '@/composables/useAPI'
-const { activePage, pages, getEmployees } = useAPI()
-const prevPage = async () => {
+  import { ref } from 'vue'
+  const pages = ref(10)
+  const activePage = ref(4)
+  const prevPage = () => {
     if (activePage.value > 1) {
       activePage.value--
-      await getEmployees()
     }
   }
-  const nextPage = async () => {
+  const nextPage = () => {
     if (activePage.value < pages.value) {
       activePage.value++
-      await getEmployees()
     }
   }
 </script>
@@ -23,7 +22,7 @@ const prevPage = async () => {
       :key="page"
       class= "page"
       :class="page === activePage ? 'active' : ''"
-      @click="jumpPage(page)"
+      @click="activePage = page"
     >
       {{ page }}
     </button>

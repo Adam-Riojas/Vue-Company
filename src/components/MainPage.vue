@@ -1,23 +1,11 @@
 <script setup>
-
-import { onMounted } from 'vue'
-
-import Mainsearch from '@/components/Mainsearch.vue'
-import MainCards from '@/components/MainCards.vue'
-import Mainpagination from '@/components/MainPagination.vue'
-
-
-import useAPI from '@/composables/useAPI'
-const { getEmployeyes, loading } = useAPI()
-onMounted(async () => {
-  await getEmployeyes()
-})
-    
+    import Mainsearch from '@/components/Mainsearch.vue'
+    import MainCards from '@/components/MainCards.vue'
+    import Mainpagination from '@/components/MainPagination.vue'
 </script>
 
 <template>
-  <p v-if="loading">Loading...</p>
-  <div v-else class="wrapper">
+  <div class="wrapper">
     <MainSearch />
     <MainCards />
     <Mainpagination />
