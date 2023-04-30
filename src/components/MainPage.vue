@@ -15,8 +15,8 @@
 </script>
 
 <template>
-  <p v-if="loading">Loading...</p>
-  <div class="wrapper">
+  <p v-if="loading">Loading... </p>
+  <div v-else class="wrapper">
     <Mainsearch />
     <MainCards />
     <Mainpagination />
