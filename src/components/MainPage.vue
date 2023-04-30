@@ -1,12 +1,23 @@
 <script setup>
+    import { onMounted } from 'vue' 
     import Mainsearch from '@/components/Mainsearch.vue'
     import MainCards from '@/components/MainCards.vue'
     import Mainpagination from '@/components/MainPagination.vue'
+
+    import useAPI from '@/composables/useAPI'
+    
+    const { getEmployees, loading } = useAPI() 
+
+
+    onMounted(async () => {
+          await getEmployees()
+        })
 </script>
 
 <template>
+  <p v-if="loading">Loading...</p>
   <div class="wrapper">
-    <MainSearch />
+    <Mainsearch />
     <MainCards />
     <Mainpagination />
   </div>
